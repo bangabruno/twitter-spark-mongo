@@ -3,4 +3,4 @@ Consumindo dados da API do Twitter, processando com Spark e utilizando uma API n
 
 Pressione para startar o projeto :]
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bangabruno/eng-twitter-spark-mongo/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bangabruno/eng-twitter-spark-mongo/master?urlpath=lab)

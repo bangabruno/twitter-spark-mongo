@@ -73,3 +73,40 @@ mv       mongodb-linux-x86_64-ubuntu1804-${MONGODB_VERSION}        mongodb-${MON
 # adding bin and sbin to $path
 echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
+
+###############################################################
+#               spark-related commands                         #
+###############################################################
+
+export SPARK_VERSION=2.4.5
+echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.bashrc
+echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.profile
+
+export SPARK_HOME=$(pwd)/spark-${SPARK_VERSION}
+echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.bashrc
+echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
+
+wget http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz -q  && \
+tar -xvf apache-spark-${SPARK_VERSION}-bin.tar.gz >> /dev/null                                                  && \
+rm       apache-spark-${SPARK_VERSION}-bin.tar.gz                                                               && \
+mv       apache-spark-${SPARK_VERSION}-bin        spark-${SPARK_VERSION}      
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> ~/.bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> ~/.profile
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> ${SPARK_HOME}/etc/hadoop/hadoop-env.sh
+
+
+# adding bin and sbin to $path
+echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.bashrc
+echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.profile
+
+# creating ssh-related folders
+mkdir ~/.ssh/etc/ssh -p
+
+# setup passphraseless ssh (forcing the adding to know hosts)
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa  &&   cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 0600 ~/.ssh/authorized_keys 
+
+# generating keys for sshd server
+ssh-keygen -A -f ~/.ssh 
+chmod 600 ~/.ssh/etc/ssh/* -R
