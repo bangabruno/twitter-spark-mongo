@@ -1,4 +1,4 @@
-# eng-twitter-spark-mongo
+# eng-twitter-spark-mongo [EM CONSTRUÇÃO]
 Consumindo dados da API do Twitter, processando com Spark e utilizando uma API no Python com Flask para gravar e conssultar os dados no MongoDB.
 
 Pressione para startar o projeto :]
