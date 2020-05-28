@@ -1,7 +1,9 @@
 ###############################################################
 #          jupyter/jupyterlab extensions/kernels              #
 ###############################################################
-py4j
+# beakerx (kernels: java, clojure, groovy, scala, kotlin, sql) and dependencies
+beakerx
+py4j=0.10.7
 
 # sos - script of scripts (multiple kernels)
 sos
