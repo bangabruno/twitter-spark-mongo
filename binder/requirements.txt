@@ -3,7 +3,7 @@
 ###############################################################
 # beakerx (kernels: java, clojure, groovy, scala, kotlin, sql) and dependencies
 beakerx
-py4j=0.10.7
+py4j
 
 # sos - script of scripts (multiple kernels)
 sos
