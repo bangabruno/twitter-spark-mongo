@@ -78,7 +78,7 @@ echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
 #               spark-related commands                         #
 ###############################################################
 
-export SPARK_VERSION=3.0.0-preview2
+export SPARK_VERSION=2.4.5
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.bashrc
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.profile
 
@@ -87,7 +87,6 @@ echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.bashrc
 echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
 
 # wget http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz -q  && \
-wget http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz -q    && \
 tar -xvf apache-spark-${SPARK_VERSION}-bin.tar.gz >> /dev/null                                                    && \
 rm       apache-spark-${SPARK_VERSION}-bin.tar.gz                                                                 && \
 mv       apache-spark-${SPARK_VERSION}-bin        spark-${SPARK_VERSION}      
