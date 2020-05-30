@@ -97,6 +97,16 @@ echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> ~/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> ~/.profile
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 " >> spark-${SPARK_HOME}
 
+export PYSPARK_PYTHON=/usr/lib/python3.6
+echo "export PYSPARK_PYTHON=/usr/lib/python3.6 " >> ~/.bashrc
+echo "export PYSPARK_PYTHON=/usr/lib/python3.6 " >> ~/.profile
+echo "export PYSPARK_PYTHON=/usr/lib/python3.6 " >> spark-${SPARK_HOME}
+
+export PYSPARK_DRIVER_PYTHON=/usr/lib
+echo "export PYSPARK_DRIVER_PYTHON=/usr/lib " >> ~/.bashrc
+echo "export PYSPARK_DRIVER_PYTHON=/usr/lib " >> ~/.profile
+echo "export PYSPARK_DRIVER_PYTHON=/usr/lib " >> spark-${SPARK_HOME}
+
 # adding bin and sbin to $path
 echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.profile
