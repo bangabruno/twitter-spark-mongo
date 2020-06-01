@@ -90,5 +90,10 @@ echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
 wget  http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}.tgz -q  && \
 tar -xvf spark-${SPARK_VERSION}.tgz >/dev/null                          && \
 rm       spark-${SPARK_VERSION}.tgz                                     && \
-mv       spark-${SPARK_VERSION}     spark-${SPARK_VERSION}      
+mv       spark-${SPARK_VERSION}     spark-${SPARK_VERSION}
 
+# adding bin and sbin to $path
+echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.bashrc
+echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.profile
+echo "export PATH=\$PATH:\$SPARK_HOME/sbin"  >> ~/.bashrc
+echo "export PATH=\$PATH:\$SPARK_HOME/sbin"  >> ~/.profile
