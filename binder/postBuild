@@ -78,19 +78,19 @@ echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
 #             spark installation commands                   #
 ###############################################################
 
-export SPARK_VERSION=spark-3.0.0-preview2-bin-hadoop2.7
+export SPARK_VERSION=3.0.0-preview2-bin-hadoop2.7
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.bashrc
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.profile
 
-export SPARK_HOME=$(pwd)/${SPARK_VERSION}
+export SPARK_HOME=$(pwd)/spark-${SPARK_VERSION}
 echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.bashrc
 echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
 
 
-wget http://mirror.nbtelecom.com.br/apache/spark/spark-3.0.0-preview2/${SPARK_VERSION}.tgz -q  && \
+wget http://mirror.nbtelecom.com.br/apache/spark/spark-3.0.0-preview2/spark-${SPARK_VERSION}.tgz -q  && \
 tar -xvf ${SPARK_VERSION}.tgz >/dev/null                          && \
 rm       ${SPARK_VERSION}.tgz                                     && \
-mv       ${SPARK_VERSION}     ${SPARK_VERSION}
+mv       ${SPARK_VERSION}    spark-${SPARK_VERSION}
 
 # adding bin and sbin to $path
 echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.bashrc
