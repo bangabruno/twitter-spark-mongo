@@ -78,7 +78,7 @@ echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
 #             spark installation commands                   #
 ###############################################################
 
-export SPARK_VERSION=3.0.0
+export SPARK_VERSION=2.4.5
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.bashrc
 echo "export SPARK_VERSION=${SPARK_VERSION}" >> ~/.profile
 
@@ -86,7 +86,8 @@ export SPARK_HOME=$(pwd)/spark-${SPARK_VERSION}
 echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.bashrc
 echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
 
-wget http://mirror.nbtelecom.com.br/apache/spark/spark-3.0.0-preview2/spark-${SPARK_VERSION}-preview2-bin-hadoop2.7.tgz -q  && \
+
+wget http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz -q  && \
 tar -xvf spark-${SPARK_VERSION}-preview2-bin-hadoop2.7.tgz >/dev/null                          && \
 rm       spark-${SPARK_VERSION}-preview2-bin-hadoop2.7.tgz                                     && \
 mv       spark-${SPARK_VERSION}-preview2-bin-hadoop2.7    spark-${SPARK_VERSION}
@@ -102,8 +103,8 @@ echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.bashrc
 echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.profile
 
 export PYTHONPATH=${SPARK_HOME}/python/lib/py4j-0.10.8.1-src.zip
-echo "export PYTHONPATH=${SPARK_HOME}/python/lib/py4j-0.10.8.1-src.zip:$PYTHONPATH" >> ~/.bashrc
-echo "export PYTHONPATH=${SPARK_HOME}/python/lib/py4j-0.10.8.1-src.zip:$PYTHONPATH" >> ~/.profile
+echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.bashrc
+echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.profile
 
 export PYSPARK_DRIVER_PYTHON="jupyter"
 echo "export PYSPARK_DRIVER_PYTHON=${PYSPARK_DRIVER_PYTHON}" >> ~/.bashrc
