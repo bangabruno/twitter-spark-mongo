@@ -13,10 +13,10 @@ Preencher as variáveis de chave (c_key,  c_secret  a_token e a_secret) para uti
 **source/03_job_spark.ipynb:**
 Definição, inicialização e transformações dos tweets obtidos.
 Após a comunicação realizada entre o socket, o streaming é iniciado e faz os seguintes passos sobre cada tweet (Utilizando RDD).
-   *. Quebra cada tweet em palavras.
-   *. Busca por palavras com hashtags (#hashtag)
-   *. Agrupa as hashtags encontradas obtendo a quantidade (count()) de cada uma.
-   *. Processa a lista de hashtags e envia cada uma delas e suas respectivas quantidades para atualização no banco de dados MongoDB,          utilizando a API como interface.
+   1. Quebra cada tweet em palavras.
+   2. Busca por palavras com hashtags (#hashtag)
+   3. Agrupa as hashtags encontradas obtendo a quantidade (count()) de cada uma.
+   4. Processa a lista de hashtags e envia cada uma delas e suas respectivas quantidades para atualização no banco de dados MongoDB,           utilizando a API como interface.
 
 
 Pressione para startar o projeto em um ambiente já todo configurado para utilização :]
