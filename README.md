@@ -1,4 +1,4 @@
-# eng-twitter-spark-mongo [EM CONSTRUÇÃO]
+# eng-twitter-spark-mongo
 Consumindo dados da API do Twitter, processando com Spark e utilizando uma API no Python com Flask para gravar e consultar os dados no MongoDB.
 
 ## Instruções
@@ -20,4 +20,5 @@ Após a comunicação realizada entre o socket, o streaming é iniciado e faz os
 
 
 Pressione para startar o projeto em um ambiente já todo configurado para utilização :]
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bangabruno/eng-twitter-spark-mongo/master?urlpath=lab)
