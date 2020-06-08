@@ -88,9 +88,9 @@ echo "export SPARK_HOME=${SPARK_HOME}"       >> ~/.profile
 
 
 wget http://ftp.unicamp.br/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz -q  && \
-tar -xvf spark-${SPARK_VERSION}-preview2-bin-hadoop2.7.tgz >/dev/null                          && \
-rm       spark-${SPARK_VERSION}-preview2-bin-hadoop2.7.tgz                                     && \
-mv       spark-${SPARK_VERSION}-preview2-bin-hadoop2.7    spark-${SPARK_VERSION}
+tar -xvf spark-${SPARK_VERSION}-bin-hadoop2.7.tgz >/dev/null                          && \
+rm       spark-${SPARK_VERSION}-bin-hadoop2.7.tgz                                     && \
+mv       spark-${SPARK_VERSION}-bin-hadoop2.7    spark-${SPARK_VERSION}
 
 # adding bin and sbin to $path
 echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.bashrc
@@ -98,13 +98,11 @@ echo "export PATH=\$PATH:\$SPARK_HOME/bin"  >> ~/.profile
 echo "export PATH=\$PATH:\$SPARK_HOME/sbin"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$SPARK_HOME/sbin"  >> ~/.profile
 
-export PYTHONPATH=${SPARK_HOME}/python
-echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.bashrc
-echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.profile
-
-export PYTHONPATH=${SPARK_HOME}/python/lib/py4j-0.10.8.1-src.zip
-echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.bashrc
-echo "export PYTHONPATH=${PYTHONPATH}" >> ~/.profile
+# adding spark/python and py4j to $pythonpath
+echo "export PYTHONPATH=\$PYTHONPATH:\$SPARK_HOME/python"  >> ~/.bashrc
+echo "export PYTHONPATH=\$PYTHONPATH:\$SPARK_HOME/python"  >> ~/.profile
+echo "export PYTHONPATH=\$PYTHONPATH:\$SPARK_HOME/python/lib/py4j-0.10.8.1-src.zip"  >> ~/.bashrc
+echo "export PYTHONPATH=\$PYTHONPATH:\$SPARK_HOME/python/lib/py4j-0.10.8.1-src.zip"  >> ~/.profile
 
 export PYSPARK_DRIVER_PYTHON="jupyter"
 echo "export PYSPARK_DRIVER_PYTHON=${PYSPARK_DRIVER_PYTHON}" >> ~/.bashrc
