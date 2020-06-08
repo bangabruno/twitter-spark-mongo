@@ -1,4 +1,3 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
-checkpoint_TwitterApp
-*/.checkpoint_TwitterApp/*
+checkpoint_TwitterApp/
